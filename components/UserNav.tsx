@@ -7,7 +7,7 @@ import { LogoutLink } from '@kinde-oss/kinde-auth-nextjs/components'
 
 export const navItems = [
     {name: 'Home', href: '/dashboard', icon: Home},
-    {name: 'Settings', href: '/dashboard/setings', icon: Settings},
+    {name: 'Settings', href: '/dashboard/settings', icon: Settings},
     {name: 'Billing', href: '/dashboard/billing', icon: CreditCard}
 ]
 
