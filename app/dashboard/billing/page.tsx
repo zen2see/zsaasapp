@@ -35,6 +35,7 @@ export default async function BillingPage() {
   const { getUser } = getKindeServerSession()
   const user = await getUser()
   const data = await getData(user?.id as string)
+
   async function createSubscription() {
     'use server'
     const dbUser = await prisma.user.findUnique({
@@ -45,7 +46,6 @@ export default async function BillingPage() {
         stripeCustomerId: true,
       },
     })
-
     if (!dbUser?.stripeCustomerId) {
       throw new Error('Unable to get customer id')
     }
