@@ -1,7 +1,7 @@
 'use client'
 
 import { navItems } from '@/components/UserNav'
-import { cn } from '@/lib/utils'
+import { cn } from '@/app/lib/utils'
 import { CreditCard, Home, Settings } from 'lucide-react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'

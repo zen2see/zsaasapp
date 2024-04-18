@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./components/theme-provider";
 import { Navbar } from "./components/Navbar";
-import prisma from '@/lib/db'
+import prisma from '@/app/lib/db'
 import {getKindeServerSession} from '@kinde-oss/kinde-auth-nextjs/server'
 
 const inter = Inter({ subsets: ["latin"] });

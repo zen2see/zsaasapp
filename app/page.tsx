@@ -6,7 +6,7 @@ import { redirect } from "next/navigation";
 export default async function Home() {
     const { isAuthenticated } = getKindeServerSession()
     if (await isAuthenticated()) {
-      return redirect('\dashboard')
+      return redirect('/dashboard')
     }
     return (
     <section className='flex items-center justify-center bg-backgound h-[90vh]'>
