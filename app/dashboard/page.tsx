@@ -79,9 +79,9 @@ export default async function DashboardPage() {
           <div className='flex h-20 w-20 items-center justify-center rounded-full bg-primary/10'>
             <File className='w-10 h-10 text-primary' />
           </div>
-          <h2 className='mt-6 text-xl font-smibold'>You don't have any notes yet.</h2>
+          <h2 className='mt-6 text-xl font-smibold'>You dont have any notes yet.</h2>
           <p className='mb-8 mt-2 text-center text-sm leading-6 text-muted-foreground max-w-sm mx-auto'>
-            You currently don't have any notes. Notes you create will be shown here.
+            You currently dont have any notes. Notes you create will be shown here.
           </p>
           {data?.Subscription?.status === 'active' ? (
             <Button asChild>
