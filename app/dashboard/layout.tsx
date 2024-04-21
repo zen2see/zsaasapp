@@ -1,9 +1,10 @@
 import { ReactNode } from 'react'
 import { DashboardNav } from '../components/DashboardNav'
-import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
-import { redirect } from "next/navigation";
-import prisma from '@/app/lib/db';
-import { stripe } from '@/app/lib/stripe';
+import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server'
+import { redirect } from 'next/navigation'
+import prisma from '@/app/lib/db'
+import { stripe } from '@/app/lib/stripe'
+import { unstable_noStore as noStore } from 'next/cache'
 
 // Adding users to prima
 async function getData({
@@ -13,12 +14,13 @@ async function getData({
   lastName,
   profileImage,
 }: {
-  email: string;
-  id: string;
-  firstName: string | undefined | null;
-  lastName: string | undefined | null;
-  profileImage: string | undefined | null;
+  email: string
+  id: string
+  firstName: string | undefined | null
+  lastName: string | undefined | null
+  profileImage: string | undefined | null
 }) {
+  noStore()
   const user = await prisma.user.findUnique({
     where: {
       id: id,

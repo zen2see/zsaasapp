@@ -1,15 +1,14 @@
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "@/components/ui/select"
 import {getKindeServerSession} from '@kinde-oss/kinde-auth-nextjs/server'
 import prisma from '@/app/lib/db'
-import { Button } from "@/components/ui/button";
-import PreviousMap from "postcss/lib/previous-map";
-import { SubmitButtons } from "@/app/components/SubmitButtons";
-import { revalidatePath } from "next/cache";
+import { SubmitButtons } from "@/app/components/SubmitButtons"
+import { revalidatePath, unstable_noStore as noStore } from "next/cache"
 
 async function getData(userId: string) {
+  noStore()
   const data = await prisma?.user.findUnique({
     where: {
       id: userId,
