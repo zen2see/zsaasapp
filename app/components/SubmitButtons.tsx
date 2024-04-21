@@ -1,7 +1,7 @@
 'use client'
 
 import { Button } from "@/components/ui/button"
-import { Loader2 } from "lucide-react"
+import { Loader2, Trash } from "lucide-react"
 import { useFormStatus } from "react-dom"
 
 export function SubmitButtons() {
@@ -50,6 +50,24 @@ export function StripePortal() {
       ) : (
         <Button className='w-fit' type='submit'>
           View payment details
+        </Button>
+      )}
+    </>
+  )
+}
+
+export function TrashDelete() {
+  const { pending } = useFormStatus()
+
+  return (
+    <>
+      {pending ? (
+        <Button variant={'destructive'} size='icon' disabled>
+          <Loader2 className='h-4 w-4 animate-spin' />
+        </Button>
+      ): ( 
+        <Button variant={'destructive'} size='icon' type='submit'>
+          <Trash className='h-4 w-4' />
         </Button>
       )}
     </>
